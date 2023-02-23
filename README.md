@@ -1,4 +1,4 @@
-# Hola
+# HPrácticas de Implementacón 2023
 
 Las prácticas consistirán en construir y realizar la implementación de un ejemplo de cada [tema](/temas). La implementación se realizará en un lenguaje a elegir por el estudiante.
 
