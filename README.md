@@ -1,4 +1,4 @@
-# HPrácticas de Implementacón 2023
+# Prácticas de Implementacón 2023
 
 Las prácticas consistirán en construir y realizar la implementación de un ejemplo de cada [tema](/temas). La implementación se realizará en un lenguaje a elegir por el estudiante.
 
@@ -13,7 +13,7 @@ Los ejemplos serán similares a los estudiados en teoría, u otros alternativos 
    - [C#](https://docs.microsoft.com/en-us/dotnet/csharp/)
    - [Ruby](https://www.ruby-lang.org/)
    - Cualquier otro lenguaje que tenga un mecanismo útil de implementación para el tema en cuestión y el ejemplo propuesto
-2. Proponer un ejemplo a implementar, bien similares a los estudiados en teoría, bien propuestos por el estudiante. 
+2. Proponer un ejemplo a implementar, bien similares a los estudiados en teoría, bien propuestos por el estudiante.
    - Colocad el ejemplo que implementéis en una carpeta con el nombre del lenguaje que hayáis elegido. Por ejemplo:
       - `csharp`
       - `lua`
@@ -27,7 +27,7 @@ Los ejemplos serán similares a los estudiados en teoría, u otros alternativos 
    - Incluir una breve explicación escrita en [markdown](https://en.wikipedia.org/wiki/Markdown), que incluya instrucciones sobre cómo construir, compilar y ejecutar el ejemplo.
    - Incluir en el código un programa principal breve de demostración del ejercicio.
    - Ubicar los ficheros markdown y el código fuente del ejemplo en la carpeta con el nombre del tema situada bajo la carpeta `temas`.
-   - Los nombres permitidos para las carpetas a situar bajo `temas/` son: 
+   - Los nombres permitidos para las carpetas a situar bajo `temas/` son:
      - `encapsulacion`,
      - `herencia`,
      - `delegacion`,
