@@ -1,103 +1,87 @@
-#Se denomina encapsulamiento al ocultamiento del estado, es decir, de los datos miembro,
-#de un objeto de manera que sólo se puede cambiar mediante las operaciones definidas para ese objeto.
+class EstudianteDeLaEsi
+  attr_accessor :Apodo #El que recordemos de esa persona
+  attr_reader :SignodelZodiaco, :Generacion #Importante
+  attr_writer :Interacciones #Numero de interacciones
+  :Amigo #Es o no es nuestro amigo
 
-
-class AnimalEnfermo
-  attr_accessor :nombre, :edad
-
-    #Vamos a programar un getter de la variable vacunas por ejemplo
-
-#Getter de vacunas de la manera mas parecida a c posible seria
-#  def vacunas
-#    @vacunas
-#  end
-
-#En ruby por suerte tenemos formas rapidas de lograr estos mecanismos.
-
-attr_reader :vacuna
-
-  #Getter de vacunas de la manera mas parecida a c posible seria
-#  def vacunas=(vacunas)
-#    @vacunas=vacunas
-#  end
-
- #En ruby podemos lograr sobrecargar el operador = de la siguiente forma
-# attr_writer :vacuna
-
-#tenemos disponibles estos 3 mecanismos para controlar el acceso.
-#attr_accessor
-#attr_reader
-#attr_writer
-
-#Con esto podriamos ahorrarnos el set y el get haciendo accesibles a lectura o escrtura la variable.
-#Con esto perdemos la posiblidad de hacer un asignacion mas procesada pero acelera el proceso de escritura.
-
-
-  #constructor
-  def initialize(nombre, patas)
-    @nombre = nombre
-    @patas = patas
-    @vacunas = 0
-    @listavacunas = []
-  end
-
-
-  def vacunar(vacuna)
-    comprobar_vacunacion(vacuna)
-  end
-
-  private
-
-#implementacion de comprobar la vacunacion.
-  def comprobar_vacunacion(vacuna)
-    if @listavacunas.index("#{vacuna}").nil?
-      @listavacunas.push("#{vacuna}")
-      @vacunas = @vacunas +1
-      puts "Vacunado de la siguiente vacuna: #{vacuna}, tiene #{vacunas} vacunas."
-    else
-      puts "Ya está vacunado de #{vacuna}"
+    def initialize(nombre, amigo, interacciones)
+      @Apodo = nombre
+      @Amigo = amigo
+      @SignodelZodiaco = "Desconocido"
+      @Interacciones = interacciones
     end
+
+
+  def SignodelZodiaco= (fecha)
+    dia, mes, @Generacion = fecha.split('/').map {|s| s.to_i }
+    case mes
+    when 1
+      signo = dia <= 20 ? 'Capricornio' : 'Acuario'
+    when 2
+      signo = dia <= 19 ? 'Acuario' : 'Piscis'
+    when 3
+      signo = dia <= 20 ? 'Piscis' : 'Aries'
+    when 4
+      signo = dia <= 20 ? 'Aries' : 'Tauro'
+    when 5
+      signo = dia <= 21 ? 'Tauro' : 'Géminis'
+    when 6
+      signo = dia <= 21 ? 'Géminis' : 'Cáncer'
+    when 7
+      signo = dia <= 23 ? 'Cáncer' : 'Leo'
+    when 8
+      signo = dia <= 23 ? 'Leo' : 'Virgo'
+    when 9
+      signo = dia <= 23 ? 'Virgo' : 'Libra'
+    when 10
+      signo = dia <= 23 ? 'Libra' : 'Escorpio'
+    when 11
+      signo = dia <= 22 ? 'Escorpio' : 'Sagitario'
+    when 12
+      signo = dia <= 21 ? 'Sagitario' : 'Capricornio'
+    else
+      raise "Fecha inválida: #{fecha}"
+    end
+    @SignodelZodiaco = signo
+  end
+
+    #frases escritas por chatgpt.
+    def interacciones
+      if @amigo
+        case @interacciones
+          when 0..10
+            "Tiene pocas interacciones, pero siempre son muy agradables."
+          when 11..50
+            "Es un buen amigo con el que da gusto interactuar."
+          when 51..100
+            "¡Qué amigo más genial! Siempre da gusto hablar con él."
+          else
+            "¡Es el mejor amigo que uno puede tener! Cada interacción es una experiencia inolvidable."
+        end
+      else
+        case @interacciones
+          when 0..10
+            "No le conozco demasiado, pero parece una persona amable."
+          when 11..50
+            "Parece que quiere ser amigo, pero sus constantes interacciones pueden resultar un poco agotadoras."
+          when 51..100
+            "¡Es un poco pesado! No para de interactuar y a veces no tengo tiempo para tanto."
+          else
+            "Es un auténtico pelmazo. ¿No tiene vida propia? Me está acosando con tanta interacción."
+        end
+      end
+    end
+end
+
+def QueOpinoDe(persona)
+  if persona.is_a?(EstudianteDeLaEsi)
+    puts "#{persona.Apodo} es #{persona.SignodelZodiaco} de la generación del #{persona.Generacion}. #{persona.interacciones}"
   end
 end
 
 
-class AnimalEnfermo2
-    attr_accessor :nombre, :patas
+Sergio = EstudianteDeLaEsi.new("Sergio", false, 101)
+Sergio.SignodelZodiaco=("19/12/1996")
 
-    def initialize(nombre, patas)
-      @nombre = nombre
-      @patas = patas
-      @listavacunas = ""
-    end
-
-    def vacunas
-      @listavacunas.count(",")
-    end
-
-    def vacunar(vacuna)
-      comprobar_vacunacion(vacuna)
-    end
-
-    private
-    def comprobar_vacunacion(vacuna)
-      if !(@listavacunas.include?("#{vacuna}"))
-        @listavacunas += "#{vacuna},"
-        puts "Vacunado de la siguiente vacuna: #{vacuna}, tiene #{@listavacunas.count(",")} vacunas."
-      else
-        puts "Ya está vacunado de #{vacuna}"
-      end
-
-    end
-  end
-
-  #La encapsulacion no es lo mismo que la ocultacion de informacion pero es un mecanismo que abstrae la informacion
-  #Al estar el contenido encapsulado en una clase pero conocerse su forma de usar se consigue abstraer el uso de la implementacion.
-
-
-humano = AnimalEnfermo.new("Manolo", 2)
-humano.vacunar("moderna")
-humano.vacunar("moderna")
-puts("El numero de vacunas es: #{humano.vacunas}")
-humano.vacunar("antigua")
-puts("El numero de vacunas es: #{humano.vacunas}")
+QueOpinoDe(Sergio)
 
