@@ -52,7 +52,7 @@ end
 ```
 
 
-La subclase `Alumno` tiene un atributo adicional `nota` y la subclase `Profesor` tiene un atributo adicional `asignatura`. La subclase `Director` también tiene un atributo adicional `curso`.
+La subclase `Alumno` tiene un atributo adicional `nota` y la subclase `Profesor` tiene un atributo adicional `asignatura`. La subclase `Director` también tiene un atributo adicional `grado`.
 
 La herencia en Ruby se implementa mediante el método `super()`, que permite llamar a los métodos de la superclase. En los métodos `initialize` de las subclases, se llama al método `super()` para inicializar los atributos heredados de la superclase.
 
