@@ -80,8 +80,10 @@ def QueOpinoDe(persona)
 end
 
 
-Sergio = EstudianteDeLaEsi.new("Sergio", false, 101)
-Sergio.SignodelZodiaco=("19/12/1996")
+#PRUEBA DE FUNCIONAMIENTO
 
-QueOpinoDe(Sergio)
+Sergio = EstudianteDeLaEsi.new("Sergio", false, 101) #Nombre, Amigo?, Interacciones
+Sergio.SignodelZodiaco=("19/12/1996") #Fecha de nacimiento
+
+QueOpinoDe(Sergio) #Imprime la frase
 

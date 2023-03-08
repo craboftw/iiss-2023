@@ -15,7 +15,7 @@ Si queremos hacer una variable privada simplemente la escribimos sin ningún ide
 ```ruby
 class EstudianteDeLaEsi
   attr_accessor :Nombre #El que recordemos de esa persona
-  attr_reader :SignodelZodiaco #Importante
+  attr_reader :SignodelZodiaco, :Generacion #Importante
   attr_writer :Interacciones #Numero de interacciones
   :Amigo #Es o no es nuestro amigo
   # ...
