@@ -58,6 +58,6 @@ La herencia en Ruby se implementa mediante el método `super()`, que permite lla
 
 Además, Ruby proporciona los atributos de acceso `attr_accessor`, `attr_reader` y `attr_writer`, que se utilizan para definir atributos de instancia y generar automáticamente los métodos de lectura y escritura necesarios.
 
-En el código proporcionado, podemos ver que las subclases `Alumno`, `Profesor` y `Director` usan `attr_accessor` para definir sus atributos adicionales y heredan los atributos `nombre`, `edad` y `sexo` de la superclase `Persona`.
+En el código proporcionado, podemos ver que las subclases `Alumno`, `Profesor` y `Director` usan `attr_accessor` para definir sus atributos adicionales y heredan los atributos `nombre`, `edad` y `sexo` de la superclase `Persona`. Ademas se puede observar que el método `to_s` está sobrecargado en cada una de las clases hijas de la clase `Persona`. La sobrecarga del método `to_s` permite personalizar la representación en cadena de cada objeto de la clase, de manera que se puedan mostrar los valores de sus atributos de forma más amigable al usuario final.
 
 La herencia en Ruby es un mecanismo poderoso que permite reutilizar el código y agregar nuevas funcionalidades a las clases existentes. Al utilizar los atributos de acceso y el método `super()`, es posible crear subclases que hereden los atributos y métodos de la superclase.
