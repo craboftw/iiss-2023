@@ -1,5 +1,3 @@
-#Funcion que explique los mecanismos de delegate de ruby
-
 class Memoria
   def initialize
     @data = []
