@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>README - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Anotaciones+en+el+c-C3-B3digo">Anotaciones en el código</a>
+    <li><a href="#label-Generaci-C3-B3n+de+documentaci-C3-B3n">Generación de documentación</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    
+<div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+    <li><a href="./README_md.html">README</a>
+    <li><a href="./YARD doc/_index_html.html">_index.html</a>
+    <li><a href="./YARD doc/class_list_html.html">class_list.html</a>
+    <li><a href="./YARD doc/css/common_css.html">common.css</a>
+    <li><a href="./YARD doc/css/full_list_css.html">full_list.css</a>
+    <li><a href="./YARD doc/css/style_css.html">style.css</a>
+    <li><a href="./YARD doc/file_README_html.html">file.README.html</a>
+    <li><a href="./YARD doc/file_list_html.html">file_list.html</a>
+    <li><a href="./YARD doc/frames_html.html">frames.html</a>
+    <li><a href="./YARD doc/index_html.html">index.html</a>
+    <li><a href="./YARD doc/js/app_js.html">app.js</a>
+    <li><a href="./YARD doc/js/full_list_js.html">full_list.js</a>
+    <li><a href="./YARD doc/js/jquery_js.html">jquery.js</a>
+    <li><a href="./YARD doc/method_list_html.html">method_list.html</a>
+    <li><a href="./YARD doc/top-level-namespace_html.html">top-level-namespace.html</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page README.md">
+<ul><li>
+<h2 id="label-Anotaciones+en+el+c-C3-B3digo">Anotaciones en el código<span><a href="#label-Anotaciones+en+el+c-C3-B3digo">&para;</a> <a href="#top">&uarr;</a></span></h2>
+</li></ul>
+
+<p>En el código proporcionado, se han utilizado las siguientes anotaciones: - <code>@param</code>: Se utiliza para documentar los parámetros de un método o función. - <code>@return</code>: Se utiliza para documentar el valor de retorno de un método o función. - <code>@raise</code>: Se utiliza para documentar las excepciones que puede lanzar un método o función. - <code>@private</code>: Se utiliza para especificar que un método es privado y no debe ser utilizado desde fuera de la clase. - <code>@deprecated</code>: No se ha utilizado en este código, pero se utiliza para marcar un método o función que ha quedado obsoleto y se recomienda no utilizarlo en el futuro. - <code>@overload</code>: No se ha utilizado en este código, pero se utiliza para documentar diferentes versiones de un método con diferentes parámetros. - <code>@see</code>: No se ha utilizado en este código, pero se utiliza para proporcionar una referencia a otro método o función relacionado.</p>
+
+<h2 id="label-Generaci-C3-B3n+de+documentaci-C3-B3n">Generación de documentación<span><a href="#label-Generaci-C3-B3n+de+documentaci-C3-B3n">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Para generar una documentación útil a partir de estas anotaciones, se pueden utilizar herramientas como <a href="https://yardoc.org/">YARD</a> o <a href="https://ruby.github.io/rdoc/">RDoc</a> . Estas herramientas analizan el código fuente y generan documentación en formato HTML o en otros formatos.</p>
+
+<p>Por ejemplo, para generar documentación utilizando YARD, se debe instalar la gema de YARD en la máquina local utilizando el siguiente comando:</p>
+
+<pre class="ruby"><span class="ruby-identifier">gem</span> <span class="ruby-identifier">install</span> <span class="ruby-identifier">yard</span>
+</pre>
+
+<p>Luego, en la carpeta del proyecto, se debe ejecutar el siguiente comando para generar la documentación:</p>
+
+<pre class="ruby"><span class="ruby-identifier">yard</span> <span class="ruby-identifier">doc</span>
+</pre>
+
+<p>Este comando analizará el código fuente y generará la documentación en formato HTML en la carpeta <code>doc/</code>. Esta documentación incluirá toda la información proporcionada por las anotaciones, como los parámetros de los métodos, los valores de retorno y las excepciones lanzadas.</p>
+
+<p>Para generar documentación utilizando RDoc para el código Ruby, primero debemos asegurarnos de que todas las anotaciones están correctamente definidas en nuestro código. En el ejemplo proporcionado, todas las anotaciones están presentes y bien definidas.</p>
+
+<p>Luego, en la línea de comando, podemos ejecutar el comando “rdoc” seguido del nombre del archivo que contiene nuestro código Ruby. Esto generará una carpeta llamada “doc” que contendrá toda la documentación generada por RDoc.</p>
+
+<p>Dentro de la carpeta “doc”, podemos encontrar varios archivos HTML que contienen la documentación de nuestro código. El archivo “index.html” es el archivo principal y nos permite navegar por la documentación.</p>
+
+<p>Además, en la documentación generada, podemos ver cómo se muestran las anotaciones en su lugar correspondiente. Por ejemplo, la anotación “@param” nos permite documentar los parámetros de un método, y la anotación “@return” nos permite documentar el valor de retorno de un método.</p>
+
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.4.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
