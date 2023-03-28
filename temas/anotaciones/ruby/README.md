@@ -1,40 +1,13 @@
+- # Mecanismo de anotación para métodos de clases con el módulo `Anuncio`
 
-- ## Anotaciones en el código
+El código proporciona un mecanismo de anotación para métodos de clases utilizando el módulo `Anuncio`. Cuando se incluye el módulo `Anuncio` en una clase, se extiende la clase con el método `anuncio` definido en el módulo `ClassMethods`.
 
-En el código proporcionado, se han utilizado las siguientes anotaciones:
-- `@param`: Se utiliza para documentar los parámetros de un método o función.
-- `@return`: Se utiliza para documentar el valor de retorno de un método o función.
-- `@raise`: Se utiliza para documentar las excepciones que puede lanzar un método o función.
-- `@private`: Se utiliza para especificar que un método es privado y no debe ser utilizado desde fuera de la clase.
-- `@deprecated`: No se ha utilizado en este código, pero se utiliza para marcar un método o función que ha quedado obsoleto y se recomienda no utilizarlo en el futuro.
-- `@overload`: No se ha utilizado en este código, pero se utiliza para documentar diferentes versiones de un método con diferentes parámetros.
-- `@see`: No se ha utilizado en este código, pero se utiliza para proporcionar una referencia a otro método o función relacionado.
-## Generación de documentación
+El método `anuncio` toma un argumento `method_name`, que es el nombre del método que se va a anotar. Luego, se utiliza el método `alias_method` para crear un alias del método original con un nombre diferente, `#{method_name}_sin_anuncio`, lo que permitirá que el método original sea llamado más tarde.
 
-Para generar una documentación útil a partir de estas anotaciones, se pueden utilizar herramientas como [YARD](https://yardoc.org/)  o [RDoc](https://ruby.github.io/rdoc/) . Estas herramientas analizan el código fuente y generan documentación en formato HTML o en otros formatos.
+A continuación, se define un nuevo método utilizando `define_method` con el mismo nombre que el método original. Este nuevo método imprime un mensaje de anuncio usando la biblioteca Artii y luego llama al método original utilizando `send`.
 
-Por ejemplo, para generar documentación utilizando YARD, se debe instalar la gema de YARD en la máquina local utilizando el siguiente comando:
+Cuando se llama al método anotado, se ejecuta el nuevo método definido en lugar del método original. El nuevo método primero imprime un mensaje de anuncio y luego llama al método original utilizando el alias creado anteriormente.
 
-```
-gem install yard
-```
+En el ejemplo proporcionado, la clase `Ejemplo` incluye el módulo `Anuncio` y define dos métodos, `metodo_sin_anuncio` y `metodo_con_anuncio`. El método `metodo_con_anuncio` está anotado utilizando `anuncio :metodo_con_anuncio`.
 
-
-
-Luego, en la carpeta del proyecto, se debe ejecutar el siguiente comando para generar la documentación:
-
-```
-yard doc
-```
-
-
-
-Este comando analizará el código fuente y generará la documentación en formato HTML en la carpeta `doc/`. Esta documentación incluirá toda la información proporcionada por las anotaciones, como los parámetros de los métodos, los valores de retorno y las excepciones lanzadas.
-
-Para generar documentación utilizando RDoc para el código Ruby, primero debemos asegurarnos de que todas las anotaciones están correctamente definidas en nuestro código. En el ejemplo proporcionado, todas las anotaciones están presentes y bien definidas.
-
-Luego, en la línea de comando, podemos ejecutar el comando ```rdoc``` seguido del nombre del archivo que contiene nuestro código Ruby. Esto generará una carpeta llamada "doc" que contendrá toda la documentación generada por RDoc.
-
-Dentro de la carpeta "doc", podemos encontrar varios archivos HTML que contienen la documentación de nuestro código. El archivo "index.html" es el archivo principal y nos permite navegar por la documentación.
-
-En este repositorio las carpeta doc generado por ```yard``` ha sido renombrada a _YARD doc_ y la carpeta doc generado por ```rdoc``` ha sido renombrada a _RDOC doc_.
+Cuando se crea una instancia de la clase `Ejemplo` y se llama a los métodos `metodo_sin_anuncio` y `metodo_con_anuncio`, el primero se ejecuta sin anotaciones mientras que el segundo se ejecuta con un mensaje de anuncio impreso en la consola antes de la ejecución del método original.

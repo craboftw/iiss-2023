@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43ad2527-6562-4f43-9a3f-09eefb870176" name="Changes" comment="">
+    <list default="true" id="abd76091-db14-46cd-88d7-6fd61a28009d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../inyeccion/ruby/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../inyeccion/ruby/Gemfile.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +20,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2NR8Sfr1LpBLEBleB07VVGETSIR" />
+  <component name="ProjectId" id="2NdEh8KchWDHuQ2Ckkjn3paDh0F" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -36,7 +37,6 @@
     "nodejs_package_manager_path": "npm",
     "ruby.rails.projectView.checked": "true",
     "ruby.structure.view.model.defaults.configured": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -44,14 +44,12 @@
   <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="43ad2527-6562-4f43-9a3f-09eefb870176" name="Changes" comment="" />
-      <created>1679615536074</created>
+      <changelist id="abd76091-db14-46cd-88d7-6fd61a28009d" name="Changes" comment="" />
+      <created>1679985675236</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1679615536074</updated>
-      <workItem from="1679615537480" duration="275000" />
-      <workItem from="1679616471209" duration="13000" />
-      <workItem from="1679616494849" duration="831000" />
+      <updated>1679985675236</updated>
+      <workItem from="1679985676680" duration="7196000" />
     </task>
     <servers />
   </component>
@@ -59,6 +57,6 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/untitled@main.rcov" NAME="main Coverage Results" MODIFIED="1679616591982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="untitled" />
+    <SUITE FILE_PATH="coverage/Debugable@Debugable.rcov" NAME="Debugable Coverage Results" MODIFIED="1679993358455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Debugable" />
   </component>
 </project>
