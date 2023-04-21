@@ -9,7 +9,7 @@ En Ruby, una función lambda es una forma de definir funciones anónimas que se 
 
 La sintaxis básica para definir una función lambda en Ruby es la siguiente:
 
-```python
+```ruby
 lambda { |argumento| expresión }
 ```
 
@@ -19,7 +19,7 @@ Donde `argumento` es el nombre del argumento que se pasará a la función y `exp
 
 Las funciones lambda se pueden asignar a variables para su posterior uso. La sintaxis para asignar una función lambda a una variable es la siguiente:
 
-```makefile
+```ruby
 variable_lambda = lambda { |argumento| expresión }
 ```
 
@@ -27,7 +27,7 @@ variable_lambda = lambda { |argumento| expresión }
 
 Para llamar a una función lambda, se utiliza el método `call`. La sintaxis para llamar a una función lambda es la siguiente:
 
-```scss
+```ruby
 variable_lambda.call(argumento)
 ```
 
@@ -37,7 +37,7 @@ Donde `variable_lambda` es la variable que contiene la función lambda y `argume
 
 Las funciones lambda pueden tomar uno o más argumentos separados por comas y también pueden aceptar bloques de código. La sintaxis para definir una función lambda con argumentos y un bloque es la siguiente:
 
-```python
+```ruby
 lambda { |argumento1, argumento2, &bloque| expresión }
 ```
 
@@ -47,7 +47,7 @@ Donde `argumento1` y `argumento2` son los nombres de los argumentos y `&bloque` 
 
 Las funciones lambda también se pueden utilizar con hashes en Ruby. La sintaxis para crear una función lambda con hashes es la siguiente:
 
-```python
+```ruby
 lambda { |hash| expresión }
 ```
 
@@ -97,7 +97,7 @@ En este ejemplo, la función lambda se define dentro del método `map`, utilizan
 
 Las funciones lambda también pueden tener condiciones para realizar diferentes acciones según los valores de los argumentos. La sintaxis para crear una función lambda con una condición es la siguiente:
 
-```python
+```ruby
 lambda { |argumento| 
   if condición
     expresión1
