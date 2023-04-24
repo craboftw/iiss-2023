@@ -172,3 +172,16 @@ puts transformar_array([1, 2, 3, 4], method(:elevar_al_cuadrado)).inspect
 
 En lugar de utilizar una función lambda, definimos una función `elevar_al_cuadrado` que toma un número como argumento y lo eleva al cuadrado. Luego, pasamos la referencia de esta función como segundo argumento en la función `transformar_array` utilizando `method(:elevar_al_cuadrado)`. En la función `transformar_array`, en lugar de utilizar `funcion_lambda.call(elemento)`, usamos `funcion.call(elemento)` para llamar a la función pasada como argumento.
 La cantidad de líneas es similar, y aunque la sintaxis puede ser ligeramente diferente, no hay una ventaja significativa en el uso de funciones lambda en ruby. Sin embargo, las funciones lambda son una herramienta útil para crear funciones anónimas y reusables que se pueden asignar a variables y pasar como argumentos a otras funciones. La sintaxis para definir y llamar a una función lambda es sencilla y su uso puede ayudar a simplificar el código y hacerlo más modular y fácil de mantener.
+
+ ## Ejemplo de ONG
+Las funciones lambda en el código proporcionan una forma eficiente de crear funciones anónimas que se pueden utilizar como argumentos de otras funciones. En este caso, se están utilizando para definir comportamientos específicos para la clase `ONGcliente`.
+
+Una lambda function se define utilizando la sintaxis `lambda { |args| expression }`. En el código, las funciones lambda se definen utilizando la notación `->{}`, que es una forma más corta de crear una función lambda en Ruby.
+
+La lambda function `@donate_lambda` toma dos argumentos, el nombre del donante y la cantidad de la donación. La función llama al método `donate` de la clase `ONGSystem`, pasando los argumentos proporcionados por el usuario. Este método agrega la donación al array `@donations`, que se utiliza para almacenar todas las donaciones.
+
+La lambda function `@report_lambda` no toma ningún argumento y llama al método `generate_report` de la clase `ONGSystem`. Este método genera un reporte con información resumida de las donaciones registradas y lo muestra en la pantalla.
+
+La lambda function `@exit_lambda` tampoco toma argumentos y simplemente imprime "Goodbye!" en la pantalla antes de salir del programa utilizando la función `exit` de Ruby.
+
+Al utilizar funciones lambda en la interfaz de usuario, se crea un código más modular y escalable. Si se desea agregar una nueva opción al menú, solo se necesita definir una nueva lambda function y agregarla al menú existente. No es necesario cambiar el código existente que se encarga de manejar la lógica de la interfaz de usuario.
