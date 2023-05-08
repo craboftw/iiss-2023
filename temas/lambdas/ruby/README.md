@@ -56,7 +56,7 @@ Donde `hash` es el nombre del hash que se va a pasar como argumento a la funció
 ------------------
 Aquí se presentan algunos ejemplos de cómo se pueden utilizar las funciones lambda en Ruby.
 
-### Ejemplo 1: Ordenamiento de un array
+## Ejemplo 1: Ordenamiento de un array
 
 Supongamos que tenemos un array de números y queremos ordenarlos de menor a mayor utilizando una función lambda. Podemos hacerlo de la siguiente manera:
 
@@ -68,7 +68,14 @@ puts ordenado.inspect
 
 En este ejemplo, la función lambda se define dentro del método `sort`, utilizando los argumentos `a` y `b`. La expresión `a <=> b` compara los valores de `a` y `b`, y devuelve `-1`, `0`, o `1` según si `a` es menor, igual o mayor que `b`. De esta manera, la función lambda indica cómo deben ser comparados los elementos del array para ordenarlos.
 
-### Ejemplo 2: Filtrado de elementos de un array
+Para extenderlo más se ha añadido un ejemplo de ordenamiento de un array de objetos. El archivo se llama `Ejemplo1.rb`.
+### Ordenando una lista de objetos con lambdas en Ruby en Ejemplo1.rb
+
+El código muestra cómo usar lambdas para ordenar una lista de objetos `Employee` en función de distintos atributos, como el nombre, la edad y el salario.
+
+Se utilizan las funciones `sort_by` y `sort`, junto con lambdas que indican qué atributo se debe tener en cuenta para el ordenamiento y en qué orden (ascendente o descendente). Además, en el último ejemplo de ordenamiento se muestra cómo se puede ordenar por múltiples atributos, especificando cómo manejar empates entre elementos.
+
+## Ejemplo 2: Filtrado de elementos de un array
 
 Supongamos que tenemos un array de números y queremos filtrar los que son pares utilizando una función lambda. Podemos hacerlo de la siguiente manera:
 
@@ -80,7 +87,10 @@ puts pares.inspect
 
 En este ejemplo, la función lambda se define dentro del método `select`, utilizando el argumento `numero`. La expresión `numero.even?` devuelve `true` si `numero` es par, y `false` si es impar. De esta manera, la función lambda indica qué elementos del array deben ser seleccionados.
 
-### Ejemplo 3: Creación de un hash a partir de un array
+### Filtrando una lista de objetos con lambdas en Ruby en Ejemplo2.rb
+En este ejemplo de uso de lambdas en Ruby, creamos una lista de empleados y utilizamos `select` con una lambda para seleccionar los empleados cuyo salario es mayor a $2500. La lambda accede al atributo `salary` de cada objeto `Employee` y compara su valor con 2500 para determinar si el empleado debe ser seleccionado. Este es un ejemplo práctico de cómo las lambdas pueden ser utilizadas para filtrar elementos de una lista de objetos según ciertos criterios de manera simple y eficiente en Ruby.
+
+## Ejemplo 3: Creación de un hash a partir de un array
 
 Supongamos que tenemos un array de nombres y queremos crear un hash donde las claves sean los nombres y los valores sean sus longitudes utilizando una función lambda. Podemos hacerlo de la siguiente manera:
 
@@ -92,13 +102,15 @@ puts hash_nombres.inspect
 
 En este ejemplo, la función lambda se define dentro del método `map`, utilizando el argumento `nombre`. La expresión `[nombre, nombre.length]` devuelve un array con dos elementos: el nombre y su longitud. De esta manera, la función lambda indica cómo deben ser transformados los elementos del array para crear el hash. Luego, se utiliza el método `to_h` para convertir el array de arrays en un hash.
 
+### Creando un hash a partir de una lista de objetos con lambdas en Ruby en Ejemplo3.rb
+Este fragmento de código muestra el uso de la función `map` en Ruby para transformar una lista de objetos en una lista de hashes con información específica. En primer lugar, se utiliza `map` para crear una lista de hashes que contienen solo el nombre y el salario de cada empleado. Luego, se imprime esta lista utilizando `inspect`. Después, se vuelve a utilizar `map` para crear una lista de hashes que contienen el nombre y el doble del salario de cada empleado, y se imprime esta lista también. Finalmente, se muestra cómo se puede utilizar el mapa generado para obtener el salario de un empleado en particular, en este caso "Violeta".
 
-### Ejemplo 4: Funciones Lambda con condiciones
+## Ejemplo 4: Funciones Lambda con condiciones
 
 Las funciones lambda también pueden tener condiciones para realizar diferentes acciones según los valores de los argumentos. La sintaxis para crear una función lambda con una condición es la siguiente:
 
 ```ruby
-lambda { |argumento| 
+lambda { |argumento|
   if condición
     expresión1
   else
@@ -109,11 +121,27 @@ lambda { |argumento|
 
 Donde `condición` es la condición que se evalúa y `expresión1` y `expresión2` son las expresiones que se evalúan si la condición es verdadera o falsa, respectivamente.
 
-### Ejemplo 5: Funciones Lambda como argumentos de otras funciones
+### Funciones Lambda con condiciones en Ruby en Ejemplo1.rb
+En el primer ejemplo vimos que para comparar nombre y edad de los empleados se puede utilizar el operador `<=>`. Sin embargo, si se quiere ordenar por nombre y luego por edad, no se puede utilizar este operador. En este caso, se puede utilizar una función lambda con una condición para ordenar primero por nombre y luego por edad. La sintaxis para hacerlo es la siguiente:
+
+```ruby
+
+ordered_by_name_and_age = employees.sort do |a, b|
+  if a.name == b.name
+    a.age <=> b.age
+  else
+    a.name <=> b.name
+  end
+end
+```
+
+
+
+## Ejemplo 5: Funciones Lambda como argumentos de otras funciones
 
 Una de las ventajas de las funciones lambda es que se pueden pasar como argumentos a otras funciones. Esto es útil para crear funciones genéricas que pueden trabajar con diferentes funciones lambda. La sintaxis para pasar una función lambda como argumento a otra función es la siguiente:
 
-```python
+```ruby
 def funcion_generica(lambda_argumento)
   lambda_argumento.call(argumento)
 end
@@ -121,67 +149,69 @@ end
 
 Donde `funcion_generica` es la función que recibe una función lambda como argumento y la llama utilizando el método `call`.
 
-### Conclusion
+### Funciones Lambda como argumentos de otras funciones en Ejemplo4.rb
+En el codigo 'Ejemplo4.rb' se muestra cómo se puede utilizar una función lambda como argumento de otra función. En este caso, la función `transformar_array` toma un array y una función lambda como argumentos, y devuelve un nuevo array con cada elemento transformado por la función lambda. La función lambda se llama utilizando el método `call`.
+
+
+## Comparando funciones lambda con funciones regulares
+Presentamos dos pequeños codigos de una calculadora con funciones lambda o sin ellas, para que se pueda ver la diferencia entre ambas.
+
+### Calculadora con funciones lambda
+```ruby
+class Calculadora
+  def initialize
+    @operaciones = {
+      suma: lambda { |a, b| a + b },
+      resta: lambda { |a, b| a - b },
+      multiplicacion: lambda { |a, b| a * b },
+      division: lambda { |a, b| a / b }
+    }
+  end
+
+  def calcular(operacion, a, b)
+    @operaciones[operacion.to_sym].call(a, b)
+  end
+end
+```
+### Calculadora sin funciones lambda
+```ruby
+class Calculadora
+  def initialize
+    @operaciones = {
+      suma: :sumar,
+      resta: :restar,
+      multiplicacion: :multiplicar,
+      division: :dividir
+    }
+  end
+
+  def calcular(operacion, a, b)
+    self.send(@operaciones[operacion.to_sym], a, b)
+  end
+
+  def sumar(a, b)
+    a + b
+  end
+
+  def restar(a, b)
+    a - b
+  end
+
+  def multiplicar(a, b)
+    a * b
+  end
+
+  def dividir(a, b)
+    a / b
+  end
+```
+Aunque el ejemplo es algo forzado, se ve la diferencia entre ambos codigos, y como las funciones lambda pueden hacer el codigo mas legible y compacto.
+
+## Ejemplo de ONG
+En el código, se definen tres funciones lambda: `@donate_lambda`, `@report_lambda`, y `@exit_lambda`. La primera toma dos argumentos y llama al método `donate` de la clase `ONGSystem`, la segunda no toma argumentos y llama al método `generate_report`, y la tercera simplemente imprime un mensaje antes de salir del programa utilizando la función `exit`. El uso de funciones lambda en la interfaz de usuario hace que el código sea modular y escalable, ya que solo se necesita definir nuevas funciones lambda y agregarlas al menú existente para agregar nuevas opciones, sin necesidad de cambiar el código existente que maneja la lógica de la interfaz de usuario.
+
+
+# Conclusion
 
 Las funciones lambda son una herramienta poderosa en el lenguaje Ruby para crear funciones anónimas y reusables que se pueden asignar a variables y pasar como argumentos a otras funciones. La sintaxis para definir y llamar a una función lambda es sencilla y su uso puede ayudar a simplificar el código y hacerlo más modular y fácil de mantener.
 
-
-```ruby
-# Definimos una función lambda que toma un número como argumento y lo eleva al cuadrado
-elevar_al_cuadrado = lambda { |numero| numero ** 2 }
-
-# Definimos una función que toma un array y una función lambda como argumentos, y devuelve un nuevo array con cada elemento transformado por la función lambda
-def transformar_array(array, funcion_lambda)
-  resultado = []
-  array.each do |elemento|
-    resultado << funcion_lambda.call(elemento)
-  end
-  resultado
-end
-
-# Probamos la función transformar_array con el array [1, 2, 3, 4] y la función lambda elevar_al_cuadrado
-puts transformar_array([1, 2, 3, 4], elevar_al_cuadrado).inspect
-# Output: [1, 4, 9, 16]
-```
-
-En este ejemplo, se define una función lambda llamada `elevar_al_cuadrado` que toma un número como argumento y lo eleva al cuadrado. Luego, se define la función `transformar_array`, que toma un array y una función lambda como argumentos, y devuelve un nuevo array con cada elemento transformado por la función lambda. Dentro de `transformar_array`, se utiliza el método `each` para iterar sobre cada elemento del array y llamar a la función lambda con cada uno, y luego se agrega el resultado a un nuevo array llamado `resultado`. Finalmente, se devuelve `resultado`.
-
-En la última línea del código, se llama a la función `transformar_array` con el array `[1, 2, 3, 4]` y la función lambda `elevar_al_cuadrado`. El resultado es un nuevo array con cada elemento elevado al cuadrado: `[1, 4, 9, 16]`.
-
-
-```ruby
-# Definimos una función que toma un número como argumento y lo eleva al cuadrado
-def elevar_al_cuadrado(numero)
-  numero ** 2
-end
-
-# Definimos una función que toma un array y una función como argumentos, y devuelve un nuevo array con cada elemento transformado por la función
-def transformar_array(array, funcion)
-  resultado = []
-  array.each do |elemento|
-    resultado << funcion.call(elemento)
-  end
-  resultado
-end
-```
-```Ruby
-# Probamos la función transformar_array con el array [1, 2, 3, 4] y la función elevar_al_cuadrado
-puts transformar_array([1, 2, 3, 4], method(:elevar_al_cuadrado)).inspect
-# Output: [1, 4, 9, 16]
-```
-
-En lugar de utilizar una función lambda, definimos una función `elevar_al_cuadrado` que toma un número como argumento y lo eleva al cuadrado. Luego, pasamos la referencia de esta función como segundo argumento en la función `transformar_array` utilizando `method(:elevar_al_cuadrado)`. En la función `transformar_array`, en lugar de utilizar `funcion_lambda.call(elemento)`, usamos `funcion.call(elemento)` para llamar a la función pasada como argumento.
-La cantidad de líneas es similar, y aunque la sintaxis puede ser ligeramente diferente, no hay una ventaja significativa en el uso de funciones lambda en ruby. Sin embargo, las funciones lambda son una herramienta útil para crear funciones anónimas y reusables que se pueden asignar a variables y pasar como argumentos a otras funciones. La sintaxis para definir y llamar a una función lambda es sencilla y su uso puede ayudar a simplificar el código y hacerlo más modular y fácil de mantener.
-
- ## Ejemplo de ONG
-Las funciones lambda en el código proporcionan una forma eficiente de crear funciones anónimas que se pueden utilizar como argumentos de otras funciones. En este caso, se están utilizando para definir comportamientos específicos para la clase `ONGcliente`.
-
-Una lambda function se define utilizando la sintaxis `lambda { |args| expression }`. En el código, las funciones lambda se definen utilizando la notación `->{}`, que es una forma más corta de crear una función lambda en Ruby.
-
-La lambda function `@donate_lambda` toma dos argumentos, el nombre del donante y la cantidad de la donación. La función llama al método `donate` de la clase `ONGSystem`, pasando los argumentos proporcionados por el usuario. Este método agrega la donación al array `@donations`, que se utiliza para almacenar todas las donaciones.
-
-La lambda function `@report_lambda` no toma ningún argumento y llama al método `generate_report` de la clase `ONGSystem`. Este método genera un reporte con información resumida de las donaciones registradas y lo muestra en la pantalla.
-
-La lambda function `@exit_lambda` tampoco toma argumentos y simplemente imprime "Goodbye!" en la pantalla antes de salir del programa utilizando la función `exit` de Ruby.
-
-Al utilizar funciones lambda en la interfaz de usuario, se crea un código más modular y escalable. Si se desea agregar una nueva opción al menú, solo se necesita definir una nueva lambda function y agregarla al menú existente. No es necesario cambiar el código existente que se encarga de manejar la lógica de la interfaz de usuario.
